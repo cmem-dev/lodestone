@@ -1,0 +1,33 @@
+{
+    "name": "cmem-dev/lodestone",
+    "description": "lodestone api.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "cmem-dev",
+            "email": "cmem@no-real.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "pear",
+            "url": "http://pear.php.net/"
+        }
+    ],
+    "require": {
+        "fabpot/goutte": "~2.0",
+        "monolog/monolog": ">=1.0.0",
+        "pear-pear.php.net/PEAR": "*",
+        "pear-pear.php.net/Cache_Lite": "*",
+        "codeception/codeception": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lodestone\\": "Lodestone/",
+            "Lodestone\\Exception\\": "Lodestone/Exception/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}

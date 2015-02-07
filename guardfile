@@ -1,0 +1,26 @@
+guard 'shell' do
+  watch(%r{^(tests/(functional|unit|acceptance))/(.+)\.php$}) do |m|
+    output = `./bin/codecept run unit --debug --steps`
+    last_lines = ''; lines2read = 4;
+    output.clone.lines.reverse_each do |line|
+      lines2read -= 1;
+      last_lines << line
+      break if lines2read == 0
+    end
+ 
+    # output
+    result = if /OK/ =~ last_lines then :success else :failed end
+    message = if result == :success
+      last_lines.scan(/(?:[^\[2K]\w+\: \d+)|\d+ \w+/).join(' ')
+    else
+      last_lines.scan(/(?:[^\[2K]\w+\: \d+)/).join(' ')
+    end
+    n(message , 'Codeception', result)
+ 
+    output
+  end
+end
+
+guard :codeception do
+  watch(%r{^.*\.php$})
+end

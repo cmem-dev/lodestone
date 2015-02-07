@@ -1,0 +1,12 @@
+# A sample Gemfile
+source "https://rubygems.org"
+ 
+group :development, :test do
+    gem 'rb-inotify', :require => false
+    gem 'rb-fsevent', :require => false
+    gem 'rb-fchange', :require => false
+    gem 'ruby_gntp'
+    gem 'growl'
+    gem "guard"
+    gem 'guard-shell'
+end
