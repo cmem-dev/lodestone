@@ -118,7 +118,7 @@ class ExceptionTest extends \Codeception\TestCase\Test
             $o = new TestException(TestException::THROW_BAD_FUNCTION_CALL);
         }Catch(BadFunctionCallException $e){
             $this->assertEquals(
-                "1Bad Function Call Exception.",
+                "Bad Function Call Exception.",
                 $e->getName()
             );
         }

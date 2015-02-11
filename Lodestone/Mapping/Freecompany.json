@@ -1,0 +1,14 @@
+{
+    "name": {
+        "selector": "//*[@id='character']/div[1]/div/div/div/div/div/div/h2/a",
+        "filter": "filterXPath",
+        "type": "text",
+        "trim": ""
+    },
+    "race": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[2]/div[3]/div[1]/div[1]/div/section/div",
+        "filter": "filterXPath",
+        "type": "text",
+        "trim": ""
+    }
+}

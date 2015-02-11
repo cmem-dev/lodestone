@@ -23,7 +23,7 @@ class ObjectTest extends \Codeception\TestCase\Test
     {
         $obj = new ObjectMock();
         $this->assertEquals(
-            'Lodestone\ObjectMock1',
+            'Lodestone\ObjectMock',
             $obj->className()
         );
     }
