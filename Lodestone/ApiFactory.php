@@ -1,6 +1,5 @@
 <?php
 namespace Lodestone;
-use Lodestone\Api\Mapping;
 use Lodestone\Api\Freecompany;
 use Lodestone\Api\Member;
 use Lodestone\Api\Character;

@@ -16,7 +16,7 @@ class LogicException extends Exception
      */
     public function getName()
     {
-        return 'Logic Exception';
+        return 'Logic Exception.';
     }
 
 }

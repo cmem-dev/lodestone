@@ -38,7 +38,9 @@ class Cache
         $vendorDir = dirname(__FILE__);
         $options = array(
             'cacheDir' => $vendorDir . Cache::CACHEDIR,
-            'lifeTime' => Cache::LIFETIME
+            'lifeTime' => Cache::LIFETIME,
+            'automaticSerialization' => true
+
         );
         Cache::$_instance = new \Cache_Lite($options);
     }

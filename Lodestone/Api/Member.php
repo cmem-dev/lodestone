@@ -15,12 +15,4 @@ class Member extends ApiAbstract
         ]);
     }
 
-    /**
-     * @param string $id
-     * @return array
-     */
-    public function get($id=''){
-        return [];
-    }
-
 }

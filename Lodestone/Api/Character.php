@@ -6,22 +6,13 @@ class Character extends ApiAbstract
 
     /**
      * Constructor.
-     * @param array $config name-value pairs that will be used to initialize the object properties
      */
-    public function __construct($config = array())
+    public function __construct()
     {
-        parent::__construct([
-            "_id" => "Character",
-            "_group" => "Api"
-        ]);
-    }
-
-    /**
-     * @param string $id
-     * @return array
-     */
-    public function get($id=''){
-        return [];
+        $config['_id'] = 'Character';
+        $config['_group'] = 'Api';
+        $config['_url'] = 'http://jp.finalfantasyxiv.com/lodestone/character/';
+        parent::__construct($config);
     }
 
 }

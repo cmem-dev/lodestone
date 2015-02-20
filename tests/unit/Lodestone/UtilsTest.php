@@ -2,7 +2,9 @@
 namespace Lodestone;
 
 
-class UtilsTest extends \Codeception\TestCase\Test
+use Codeception\TestCase\Test;
+
+class UtilsTest extends Test
 {
     /**
      * @var \UnitTester

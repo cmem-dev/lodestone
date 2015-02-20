@@ -32,10 +32,6 @@ class Utils {
                 }
                 $array_result = true;
                 foreach ($val as $in) {
-                    /*
-                     * SC_Utils_Ex への再帰は無限ループやメモリリークの懸念
-                     * 自クラスへ再帰する.
-                     */
                     $array_result = Utils::isBlank($in, $greedy);
                     if (!$array_result) {
                         return false;
@@ -91,5 +87,18 @@ class Utils {
     {
         $string = preg_replace('/([A-Z])/', '_$1', $string);
         return strtolower(substr($string, 1));
+    }
+
+    /**
+     * Trim query string append
+     *
+     * For Example abc?123456789 => abc
+     *
+     * @param  string $string
+     * @return string trim string
+     */
+    public static function trimQsa($string)
+    {
+        return preg_replace('/\?[A-Za-z0-9]+$/', '', $string);
     }
 }

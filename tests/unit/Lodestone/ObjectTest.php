@@ -1,7 +1,9 @@
 <?php
 namespace Lodestone;
 
-class ObjectTest extends \Codeception\TestCase\Test
+use Codeception\TestCase\Test;
+
+class ObjectTest extends Test
 {
     /**
      * @var \UnitTester

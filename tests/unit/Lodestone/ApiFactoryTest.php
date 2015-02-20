@@ -2,7 +2,9 @@
 namespace Lodestone;
 
 
-class ApiFactoryTest extends \Codeception\TestCase\Test
+use Codeception\TestCase\Test;
+
+class ApiFactoryTest extends Test
 {
     /**
      * @var \UnitTester

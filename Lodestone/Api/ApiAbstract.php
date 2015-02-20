@@ -2,6 +2,7 @@
 namespace Lodestone\Api;
 
 
+use Goutte\Client;
 use Lodestone\Object;
 use Lodestone\Cache;
 use Lodestone\JSON;
@@ -13,13 +14,14 @@ abstract class ApiAbstract extends Object
     protected $_id;
     protected $_group;
     protected $_mapping;
+    protected $_url;
     protected $_mappingFilePath;
 
     /**
      * Constructor.
      * @param array $config name-value pairs that will be used to initialize the object properties
      */
-    public function __construct($config = array())
+    public function __construct($config = [])
     {
         $vendorDir = dirname(dirname(__FILE__));
         $config['_mappingFilePath'] = "{$vendorDir}/Mapping/{$config['_id']}.json";
@@ -29,10 +31,11 @@ abstract class ApiAbstract extends Object
     /**
      * Object Initialize.
      */
-    public function init(){
-        if($data = Cache::get($this->_id, $this->_group)){
-            $mapping = unserialize($data);
-        }else{
+    public function init()
+    {
+        if ($data = Cache::get($this->_id, $this->_group)) {
+            $mapping = $data;
+        } else {
             $mappingJson = file_get_contents($this->_mappingFilePath);
             $mapping = JSON::parse($mappingJson);
             Cache::save($mapping, $this->_id, $this->_group);
@@ -47,24 +50,93 @@ abstract class ApiAbstract extends Object
      */
     public function getMapping($key = '')
     {
-        if(Utils::isBlank($key)){
+        if (Utils::isBlank($key)) {
             return $this->_mapping;
-        }else{
+        } else {
             return $this->_mapping[$key];
         }
     }
 
     /**
-     * @param mixed $mapping
+     * @param array $mapping
+     * @internal param mixed $mapping
      */
-    public function setMapping($mapping)
+    public function setMapping($mapping = [])
     {
-        $this->_mapping = $mapping;
+        if (!Utils::isBlank($mapping)) {
+            $this->_mapping = $mapping;
+        }
     }
 
     /**
      * @param string $id
-     * @return mixed
+     * @return array
      */
-    public abstract function get($id='');
+    public function get($id = '')
+    {
+        if (Utils::isBlank($id)) return [];
+        $group = $this->className();
+        if (!$data = Cache::get($id, $group)) {
+            $data = $this->doScraping($id);
+            Cache::save($data, $id, $group);
+        }
+        return $data;
+    }
+
+    /**
+     * @param $id
+     * @return array
+     */
+    function doScraping($id)
+    {
+        $url = $this->_url . $id;
+        $mapping = $this->getMapping();
+        $crawler = $this->getCrawler('GET', $url);
+        return $this->scraping($crawler, $mapping);
+    }
+
+    /**
+     * @param \Symfony\Component\DomCrawler\Crawler $crawler
+     * @param array $mapping
+     * @return array
+     */
+    public function scraping($crawler, $mapping = [])
+    {
+        if (Utils::isBlank($mapping)) return [$crawler->html()];
+        $ret = [];
+        foreach ($mapping as $key => $value) {
+            $dom = $crawler->$value['filter']($value['selector']);
+            if (isset($value['subset'])
+                && !Utils::isBlank($value['subset'])
+            ) {
+                $ret[$key] = $dom->each(function ($node) use ($value) {
+                    if ($value['attr'] == 'text') {
+                        $temp = $node->text();
+                    } else {
+                        $temp = $node->attr($value['attr']);
+                    }
+                    return Utils::trimQsa($temp);
+                });
+            } elseif (isset($value['attr'])
+                && Utils::isBlank($value['attr'])
+            ) {
+                $ret[$key] = Utils::trimQsa($dom->text());
+            } else {
+                $ret[$key] = Utils::trimQsa($dom->attr($value['attr']));
+            }
+        }
+        return $ret;
+    }
+
+    /**
+     * @param $method
+     * @param $url
+     * @return \Symfony\Component\DomCrawler\Crawler
+     */
+    public function getCrawler($method, $url)
+    {
+        $client = new Client();
+        return $client->request($method, $url);
+    }
 }
+
