@@ -14,7 +14,7 @@ class OutOfRangeException extends LogicException
      */
     public function getName()
     {
-        return 'Out Range.';
+        return 'Out Of Range Exception.';
     }
 
 } 

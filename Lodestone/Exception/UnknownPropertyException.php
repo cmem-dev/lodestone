@@ -12,6 +12,6 @@ class UnknownPropertyException extends LogicException
      */
     public function getName()
     {
-        return 'Unknown Property';
+        return 'Unknown Property Exception.';
     }
 }

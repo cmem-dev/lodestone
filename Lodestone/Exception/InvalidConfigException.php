@@ -12,6 +12,6 @@ class InvalidConfigException extends LogicException
      */
     public function getName()
     {
-        return 'Invalid Configuration Exception.';
+        return 'Invalid Config Exception.';
     }
 }

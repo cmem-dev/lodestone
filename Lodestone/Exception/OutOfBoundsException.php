@@ -14,7 +14,7 @@ class OutOfBoundsException extends RuntimeException
      */
     public function getName()
     {
-        return 'Out of Bounds Exception.';
+        return 'Out Of Bounds Exception.';
     }
 
 } 

@@ -12,6 +12,6 @@ class InvalidParamException extends BadMethodCallException
      */
     public function getName()
     {
-        return 'Invalid Parameter';
+        return 'Invalid Param Exception.';
     }
 }

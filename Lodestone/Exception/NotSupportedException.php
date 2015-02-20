@@ -8,7 +8,7 @@ class NotSupportedException extends BadMethodCallException
      */
     public function getName()
     {
-        return 'Not Supported';
+        return 'Not Supported Exception.';
     }
 
 }

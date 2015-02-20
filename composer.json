@@ -19,7 +19,8 @@
         "fabpot/goutte": "~2.0",
         "pear-pear.php.net/PEAR": "*",
         "pear-pear.php.net/Cache_Lite": "*",
-        "codeception/codeception": "*"
+        "codeception/codeception": "*",
+        "codeception/aspect-mock": "*"
     },
     "autoload": {
         "psr-4": {

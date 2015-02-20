@@ -22,6 +22,6 @@ coverage:
         include:
             - Lodestone/*.php
         exclude:
-            - Lodestone/Data/*
+            - Lodestone/Mapping/*
             - Lodestone/Log/*
             - Lodestone/Storage/*

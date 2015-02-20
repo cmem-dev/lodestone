@@ -14,12 +14,4 @@ class Freecompany extends ApiAbstract
             "_group" => "Api"
         ]);
     }
-
-    /**
-     * @param string $id
-     * @return array
-     */
-    public function get($id=''){
-        return [];
-    }
 }
