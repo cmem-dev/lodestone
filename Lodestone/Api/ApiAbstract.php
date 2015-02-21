@@ -146,6 +146,7 @@ abstract class ApiAbstract extends Object
      */
     public function getValue($node, $attr)
     {
+        $temp = '';
         try {
             if (Utils::isBlank($attr)) {
                 $temp = $node->text();
