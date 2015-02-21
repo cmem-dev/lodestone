@@ -50,7 +50,7 @@ class ApiAbstractTest extends Test
             "level" => [
                 "selector" => '//*[@id="character"]/div[3]/div/div/div[2]/div[3]/div[1]/div[2]/div[1]/ul/li',
                 "filter" => "filterXPath",
-                "attr" => "text",
+                "attr" => "",
                 "subset" => 1,
                 "trim" => ""
             ],

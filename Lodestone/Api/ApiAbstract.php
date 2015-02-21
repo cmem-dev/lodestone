@@ -3,6 +3,7 @@ namespace Lodestone\Api;
 
 
 use Goutte\Client;
+use GuzzleHttp\Exception\RequestException;
 use Lodestone\Object;
 use Lodestone\Cache;
 use Lodestone\JSON;
@@ -92,6 +93,9 @@ abstract class ApiAbstract extends Object
         $url = $this->_url . $id;
         $mapping = $this->getMapping();
         $crawler = $this->getCrawler('GET', $url);
+        if (is_null($crawler)) {
+            return [];
+        }
         return $this->scraping($crawler, $mapping);
     }
 
@@ -110,19 +114,10 @@ abstract class ApiAbstract extends Object
                 && !Utils::isBlank($value['subset'])
             ) {
                 $ret[$key] = $dom->each(function ($node) use ($value) {
-                    if ($value['attr'] == 'text') {
-                        $temp = $node->text();
-                    } else {
-                        $temp = $node->attr($value['attr']);
-                    }
-                    return Utils::trimQsa($temp);
+                    return $this->getValue($node, $value['attr']);
                 });
-            } elseif (isset($value['attr'])
-                && Utils::isBlank($value['attr'])
-            ) {
-                $ret[$key] = Utils::trimQsa($dom->text());
             } else {
-                $ret[$key] = Utils::trimQsa($dom->attr($value['attr']));
+                $ret[$key] = $this->getValue($dom, $value['attr']);
             }
         }
         return $ret;
@@ -131,12 +126,35 @@ abstract class ApiAbstract extends Object
     /**
      * @param $method
      * @param $url
-     * @return \Symfony\Component\DomCrawler\Crawler
+     * @return null|\Symfony\Component\DomCrawler\Crawler
      */
     public function getCrawler($method, $url)
     {
         $client = new Client();
-        return $client->request($method, $url);
+        try {
+            $crawler = $client->request($method, $url);
+        } catch (RequestException $e) {
+            $crawler = null;
+        }
+        return $crawler;
+    }
+
+    /**
+     * @param $node \Symfony\Component\DomCrawler\Crawler
+     * @param string $attr
+     * @return string
+     */
+    public function getValue($node, $attr)
+    {
+        try {
+            if (Utils::isBlank($attr)) {
+                $temp = $node->text();
+            } else {
+                $temp = $node->attr($attr);
+            }
+        } catch (\Exception $e) {
+        }
+        return Utils::trimQsa($temp);
     }
 }
 
