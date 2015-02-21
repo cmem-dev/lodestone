@@ -1,4 +1,18 @@
 {
+    "icon": {
+        "selector": "div.player_name_thumb > a img",
+        "filter": "filter",
+        "attr": "src",
+        "subset":"",
+        "trim": ""
+    },
+    "image": {
+        "selector": "//*[@id='chara_img_area']/div[2]/img",
+        "filter": "filterXPath",
+        "attr": "src",
+        "subset":"",
+        "trim": ""
+    },
     "name": {
         "selector": "//*[@id='character']/div[1]/div/div/div/div/div/div/h2/a",
         "filter": "filterXPath",
@@ -11,6 +25,20 @@
         "filter": "filterXPath",
         "attr": "",
         "subset":"",
+        "trim": ""
+    },
+    "mount": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[5]/div[1]/div/div/div/a",
+        "filter": "filterXPath",
+        "attr": "title",
+        "subset":"1",
+        "trim": ""
+    },
+    "mount_img": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[5]/div[1]/div/div/div/a/img",
+        "filter": "filterXPath",
+        "attr": "src",
+        "subset":"1",
         "trim": ""
     }
 }
