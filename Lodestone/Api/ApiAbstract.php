@@ -3,7 +3,6 @@ namespace Lodestone\Api;
 
 
 use Goutte\Client;
-use GuzzleHttp\Exception\RequestException;
 use Lodestone\Object;
 use Lodestone\Cache;
 use Lodestone\JSON;
@@ -70,16 +69,16 @@ abstract class ApiAbstract extends Object
     }
 
     /**
-     * @param string $id
+     * @param int $id
      * @return array
      */
-    public function get($id = '')
+    public function get($id)
     {
         if (Utils::isBlank($id)) return [];
-        $group = $this->className();
-        if (!$data = Cache::get($id, $group)) {
+        if (!is_numeric($id)) return [];
+        if (!$data = Cache::get($id, $this->_group)) {
             $data = $this->doScraping($id);
-            Cache::save($data, $id, $group);
+            Cache::save($data, $id, $this->_group);
         }
         return $data;
     }
@@ -131,10 +130,15 @@ abstract class ApiAbstract extends Object
     public function getCrawler($method, $url)
     {
         $client = new Client();
-        try {
-            $crawler = $client->request($method, $url);
-        } catch (RequestException $e) {
-            $crawler = null;
+        $crawler = $client->request($method, $url);
+        $status = $client->getResponse()->getStatus();
+
+        switch ($status) {
+            case 200:
+                break;
+            default:
+                $crawler = null;
+                break;
         }
         return $crawler;
     }

@@ -95,6 +95,14 @@ class ApiAbstractTest extends Test
         );
     }
 
+    public function testApiAbstract_getCrawlerのレスポンスが200以外のとき_nullが返る()
+    {
+        $mock = new ApiMock();
+        $this->assertTrue(
+            is_null($mock->getCrawler('GET', $this->url . "1111111111"))
+        );
+    }
+
     public function testApiAbstract_scrapingのmappingが空の時_HTMLを取得する()
     {
         $mock = new ApiMock();
@@ -195,6 +203,15 @@ class ApiAbstractTest extends Test
         );
     }
 
+    public function testApiAbstract_doScrapingでidが存在しない時_空配列を取得する()
+    {
+        $mock = new ApiMock();
+        $this->assertEquals(
+            [],
+            $mock->doScraping($this->id . "111111")
+        );
+    }
+
     public function testApiAbstract_doScraping時_取得データの配列を取得する()
     {
         $mock = new ApiMock();
@@ -267,6 +284,14 @@ class ApiAbstractTest extends Test
             ],
             $mock->get($this->id)
         );
+    }
+
+    public function testApiAbstract_getでキャッシュが存在しないとき時_取得データのキャッシュを生成する()
+    {
+        $mock = new ApiMock();
+        Cache::clean('ApiMock');
+
+        $mock->get($this->id);
     }
 }
 
