@@ -13,8 +13,50 @@
         "subset":"",
         "trim": ""
     },
+    "title": {
+        "selector": "//*[@id='character']/div[1]/div/div/div/div/div/div/h2/div",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
     "name": {
         "selector": "//*[@id='character']/div[1]/div/div/div/div/div/div/h2/a",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "birth": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[2]/div[3]/div[1]/div[1]/div/section/dl[1]/dd[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "faith": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[2]/div[3]/div[1]/div[1]/div/section/dl[1]/dd[4]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "start": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[2]/div[3]/div[1]/div[1]/div/section/dl[2]/dd[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "grand_company": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[2]/div[3]/div[1]/div[1]/div/section/dl[3]/dd[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "free_company": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[2]/div[3]/div[1]/div[1]/div/section/dl[4]/dd[2]/a",
         "filter": "filterXPath",
         "attr": "",
         "subset":"",
@@ -27,6 +69,13 @@
         "subset":"",
         "trim": ""
     },
+    "profile": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[2]/div[2]/div/div",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
     "mount": {
         "selector": "//*[@id='character']/div[3]/div/div/div[5]/div[1]/div/div/div/a",
         "filter": "filterXPath",
@@ -34,11 +83,298 @@
         "subset":"1",
         "trim": ""
     },
-    "mount_img": {
+    "mount_icon": {
         "selector": "//*[@id='character']/div[3]/div/div/div[5]/div[1]/div/div/div/a/img",
         "filter": "filterXPath",
         "attr": "src",
         "subset":"1",
+        "trim": ""
+    },
+    "minion": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[5]/div[2]/div/div/div/a",
+        "filter": "filterXPath",
+        "attr": "title",
+        "subset":"1",
+        "trim": ""
+    },
+    "minion_icon": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[5]/div[2]/div/div/div/a/img",
+        "filter": "filterXPath",
+        "attr": "src",
+        "subset":"1",
+        "trim": ""
+    },
+    "class_level": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[2]/div[3]/div[1]/div[2]/div/ul/li",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"1",
+        "trim": ""
+    },
+    "class_icon": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[2]/div[3]/div[1]/div[2]/div/ul/li/img",
+        "filter": "filterXPath",
+        "attr": "src",
+        "subset":"1",
+        "trim": ""
+    },
+    "HP": {
+        "selector": "//*[@id='power_gauge']/li[1]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "MP": {
+        "selector": "//*[@id='power_gauge']/li[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "TP": {
+        "selector": "//*[@id='power_gauge']/li[3]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "STR": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[1]/div[1]/ul/li[1]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "DEX": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[1]/div[1]/ul/li[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "VIT": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[1]/div[1]/ul/li[3]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "INT": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[1]/div[1]/ul/li[4]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "MND": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[1]/div[1]/ul/li[5]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "PIE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[1]/div[1]/ul/li[6]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "FIRE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[1]/div[2]/ul/li[1]/span",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "ICE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[1]/div[2]/ul/li[2]/span",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "WIND": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[1]/div[2]/ul/li[3]/span",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "EARTH": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[1]/div[2]/ul/li[4]/span",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "THUNDER": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[1]/div[2]/ul/li[5]/span",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "WATER": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[1]/div[2]/ul/li[6]/span",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "ACCURACY": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[2]/ul/li[1]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "CRITICAL_HIT_RATE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[2]/ul/li[2]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "DETERMINATION": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[2]/ul/li[3]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "DEFENCE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[3]/ul/li[1]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "PARRY": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[3]/ul/li[2]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "MAGIC_DEFENCE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[3]/ul/li[3]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "ATTACK_POWER": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[4]/ul/li[1]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "SKILL_SPEED": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[4]/ul/li[2]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "ATTACK_MAGIC_POTENCY": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[5]/ul/li[1]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "HEALING_MAGIC_POTENCY": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[5]/ul/li[2]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "SPELL_SPEED": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[1]/div[1]/div[5]/ul/li[3]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "SLOW_RESISTANCE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[2]/div[1]/div/ul/li[1]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "SILENCE_RESISTANCE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[2]/div[1]/div/ul/li[2]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "BLIND_RESISTANCE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[2]/div[1]/div/ul/li[3]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "POISON_RESISTANCE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[2]/div[1]/div/ul/li[4]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "STUN_RESISTANCE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[2]/div[1]/div/ul/li[4]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "SLEEP_RESISTANCE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[2]/div[1]/div/ul/li[5]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "BIND_RESISTANCE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[2]/div[1]/div/ul/li[6]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "HEAVY_RESISTANCE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[2]/div[1]/div/ul/li[7]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "SLASHING_RESISTANCE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[2]/div[2]/div/ul/li[1]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "PIERCING_RESISTANCE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[2]/div[2]/div/ul/li[2]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "BLUNT_RESISTANCE": {
+        "selector": "//*[@id='character']/div[3]/div/div/div[3]/div[2]/div[2]/div/ul/li[3]/span[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
         "trim": ""
     }
 }
