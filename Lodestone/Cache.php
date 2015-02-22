@@ -1,5 +1,6 @@
 <?php
 namespace Lodestone;
+use Cache_Lite;
 
 /**
  * Cache control.
@@ -42,13 +43,13 @@ class Cache
             'automaticSerialization' => true
 
         );
-        Cache::$_instance = new \Cache_Lite($options);
+        Cache::$_instance = new Cache_Lite($options);
     }
 
     /**
      * Get Cache_Lite object.
      *
-     * @return \Cache_Lite
+     * @return Cache_Lite
      */
     public static function getInstance()
     {
