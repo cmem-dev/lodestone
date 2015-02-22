@@ -1,9 +1,10 @@
 <?php
 namespace Lodestone;
 
-use AspectMock\Test as test;
 
-class CacheTest extends \Codeception\TestCase\Test
+use Codeception\TestCase\Test;
+
+class CacheTest extends Test
 {
     /**
      * @var \UnitTester
