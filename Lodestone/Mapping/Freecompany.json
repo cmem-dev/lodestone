@@ -1,13 +1,111 @@
 {
     "name": {
-        "selector": "//*[@id='character']/div[1]/div/div/div/div/div/div/h2/a",
+        "selector": "//*[@id='myfreecompany']/div[1]/div/div/div/div/div/div/div/div[2]/span[2]",
         "filter": "filterXPath",
         "attr": "",
         "subset":"",
         "trim": ""
     },
-    "race": {
-        "selector": "//*[@id='character']/div[3]/div/div/div[2]/div[3]/div[1]/div[1]/div/section/div",
+    "server": {
+        "selector": "//*[@id='myfreecompany']/div[1]/div/div/div/div/div/div/div/div[2]/span[3]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "grand_company": {
+        "selector": "//*[@id='myfreecompany']/div[1]/div/div/div/div/div/div/div/div[2]/text()",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "friendship": {
+        "selector": "//*[@id='myfreecompany']/div[1]/div/div/div/div/div/div/div/div[2]/span[1]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "company_tag": {
+        "selector": "//*[@id='myfreecompany']/div[3]/div/div[2]/div/div/div/table/tr[1]/td/text()",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "active_member": {
+        "selector": "//*[@id='myfreecompany']/div[3]/div/div[2]/div/div/div/table/tr[3]/td",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "rank": {
+        "selector": "//*[@id='myfreecompany']/div[3]/div/div[2]/div/div/div/table/tr[4]/td",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "ranking": {
+        "selector": "//*[@id='myfreecompany']/div[3]/div/div[2]/div/div/div/table/tr[5]/td",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "slogan": {
+        "selector": "//*[@id='myfreecompany']/div[3]/div/div[2]/div/div/div/table/tr[6]/td",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "focus_icon": {
+        "selector": "#myfreecompany > div.base_footer > div > div.area_inner_header > div > div > div > table > tr:nth-child(7) > td > ul > li:not(.icon_off) > img",
+        "filter": "filter",
+        "attr": "src",
+        "subset":"1",
+        "trim": ""
+    },
+    "focus_title": {
+        "selector": "#myfreecompany > div.base_footer > div > div.area_inner_header > div > div > div > table > tr:nth-child(7) > td > ul > li:not(.icon_off) > img",
+        "filter": "filter",
+        "attr": "title",
+        "subset":"1",
+        "trim": ""
+    },
+    "active": {
+        "selector": "//*[@id='myfreecompany']/div[3]/div/div[2]/div/div/div/table/tr[9]/td",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "recruitment": {
+        "selector": "//*[@id='myfreecompany']/div[3]/div/div[2]/div/div/div/table/tr[10]/td",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "housing": {
+        "selector": "//*[@id='myfreecompany']/div[3]/div/div[2]/div/div/div/table/tr[11]/td/div[1]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "housing_address": {
+        "selector": "//*[@id='myfreecompany']/div[3]/div/div[2]/div/div/div/table/tr[11]/td/p[1]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"",
+        "trim": ""
+    },
+    "housing_greeting": {
+        "selector": "//*[@id='myfreecompany']/div[3]/div/div[2]/div/div/div/table/tr[11]/td/p[2]",
         "filter": "filterXPath",
         "attr": "",
         "subset":"",
