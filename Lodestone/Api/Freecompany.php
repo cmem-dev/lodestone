@@ -5,13 +5,12 @@ class Freecompany extends ApiAbstract
 {
     /**
      * Constructor.
-     * @param array $config name-value pairs that will be used to initialize the object properties
      */
-    public function __construct($config = array())
+    public function __construct()
     {
-        parent::__construct([
-            "_id" => "Freecompany",
-            "_group" => "Api"
-        ]);
+        $config['_id'] = 'Freecompany';
+        $config['_group'] = 'Api';
+        $config['_url'] = 'http://jp.finalfantasyxiv.com/lodestone/freecompany/';
+        parent::__construct($config);
     }
 }
