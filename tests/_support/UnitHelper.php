@@ -7,4 +7,10 @@ namespace Codeception\Module;
 class UnitHelper extends \Codeception\Module
 {
 
+    public function _after(\Codeception\TestCase $test)
+    {
+        \AspectMock\Test::clean();
+    }
+
 }
+
