@@ -76,6 +76,20 @@
         "subset":"1",
         "trim": ""
     },
+    "seeking_icon": {
+        "selector": "#myfreecompany > div.base_footer > div > div.area_inner_header > div > div > div > table > tr:nth-child(8) > td > ul > li:not(.icon_off) > img",
+        "filter": "filter",
+        "attr": "src",
+        "subset":"1",
+        "trim": ""
+    },
+    "seeking_title": {
+        "selector": "#myfreecompany > div.base_footer > div > div.area_inner_header > div > div > div > table > tr:nth-child(8) > td > ul > li:not(.icon_off) > img",
+        "filter": "filter",
+        "attr": "title",
+        "subset":"1",
+        "trim": ""
+    },
     "active": {
         "selector": "//*[@id='myfreecompany']/div[3]/div/div[2]/div/div/div/table/tr[9]/td",
         "filter": "filterXPath",
