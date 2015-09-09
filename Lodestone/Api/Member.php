@@ -31,16 +31,14 @@ class Member extends ApiAbstract
         }
         $data = $this->scraping($crawler, $mapping);
         $tempData = Utils::swapArray($data);
-        if ($tempData['total'] < 50) {
+        if ($tempData[0]['total'] < 50) {
             return $tempData;
         }
 
-        $pages = ceil($tempData['total'] / 50);
+        $pages = (int)ceil($tempData[0]['total'] / 50);
         for ($i = 2; $i <= $pages; $i++) {
             $tempData = array_merge(
-                $tempData,
-                $this->doScrapingPaging($id, $tempData['total']
-                )
+                $tempData, $this->doScrapingPaging($id, $i)
             );
         }
 
@@ -48,7 +46,7 @@ class Member extends ApiAbstract
     }
 
     /**
-     * doScraping Paging (override)
+     * doScraping Paging
      * @param $id
      * @param $pageNo
      * @return array
@@ -65,4 +63,5 @@ class Member extends ApiAbstract
 
         return Utils::swapArray($data);
     }
+
 }

@@ -63,10 +63,10 @@
         "trim": ""
     },
     "total": {
-        "selector": "//*[@id='myfreecompany']/div[2]/div/div[2]/div[1]/div/div/div/span[1]",
-        "filter": "filterXPath",
-        "attr": "",
-        "subset":"1",
-        "trim": ""
+      "selector": "//*[@id='myfreecompany']/div[2]/div/div[2]/div[1]/div/div/div/span[1]",
+      "filter": "filterXPath",
+      "attr": "",
+      "subset":"1",
+      "trim": ""
     }
 }
