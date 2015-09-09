@@ -1,0 +1,16 @@
+{
+    "server": {
+        "selector": "//*[@id='server_status']/div/div/div/div/div/div/table/tr/td[1]/div",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"1",
+        "trim": ""
+    },
+    "status": {
+        "selector": "//*[@id='server_status']/div/div/div/div/div/div/table/tr/td[2]/span",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"1",
+        "trim": ""
+    }
+}

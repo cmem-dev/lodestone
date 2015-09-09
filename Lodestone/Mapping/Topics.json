@@ -1,0 +1,44 @@
+{
+    "id": {
+        "selector": "//*[@id='main']/div/div/div[2]/div/div/ul/li/div[1]/a",
+        "filter": "filterXPath",
+        "attr": "href",
+        "subset":"1",
+        "trim": "hash"
+    },
+    "timestamp": {
+        "selector": "//*[@id='main']/div/div/div[2]/div/div/ul/li/div[1]/span/script/text()",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"1",
+        "trim": "timestamp"
+    },
+    "href": {
+        "selector": "//*[@id='main']/div/div/div[2]/div/div/ul/li/div[1]/a",
+        "filter": "filterXPath",
+        "attr": "href",
+        "subset":"1",
+        "trim": ""
+    },
+    "title": {
+        "selector": "//*[@id='main']/div/div/div[2]/div/div/ul/li/div[1]/a",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"1",
+        "trim": ""
+    },
+    "image": {
+        "selector": "//*[@id='main']/div/div/div[2]/div/div/ul/li/div[2]/a[1]/img",
+        "filter": "filterXPath",
+        "attr": "src",
+        "subset":"1",
+        "trim": ""
+    },
+    "description": {
+        "selector": "//*[@id='main']/div/div/div[2]/div/div/ul/li/div[2]",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"1",
+        "trim": ""
+    }
+}

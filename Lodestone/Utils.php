@@ -101,4 +101,28 @@ class Utils {
     {
         return preg_replace('/\?[A-Za-z0-9]+$/', '', $string);
     }
+
+    /**
+     * swap array.
+     *
+     * @param array $array
+     * @param bool $isColumnName
+     * @return array
+     */
+    public static function swapArray($array, $isColumnName = true)
+    {
+        $arrRet = array();
+        foreach ($array as $key1 => $arr1) {
+            if (!is_array($arr1)) continue 1;
+            $index = 0;
+            foreach ($arr1 as $key2 => $val) {
+                if ($isColumnName) {
+                    $arrRet[$key2][$key1] = $val;
+                } else {
+                    $arrRet[$index++][$key1] = $val;
+                }
+            }
+        }
+        return $arrRet;
+    }
 }

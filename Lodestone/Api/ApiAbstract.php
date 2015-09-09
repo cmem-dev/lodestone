@@ -113,10 +113,10 @@ abstract class ApiAbstract extends Object
                 && !Utils::isBlank($value['subset'])
             ) {
                 $ret[$key] = $dom->each(function ($node) use ($value) {
-                    return $this->getValue($node, $value['attr']);
+                    return $this->getValue($node, $value['attr'], $value['trim']);
                 });
             } else {
-                $ret[$key] = $this->getValue($dom, $value['attr']);
+                $ret[$key] = $this->getValue($dom, $value['attr'], $value['trim']);
             }
         }
         return $ret;
@@ -146,9 +146,10 @@ abstract class ApiAbstract extends Object
     /**
      * @param $node \Symfony\Component\DomCrawler\Crawler
      * @param string $attr
+     * @param $trim
      * @return string
      */
-    public function getValue($node, $attr)
+    public function getValue($node, $attr, $trim)
     {
         $temp = '';
         try {
@@ -158,6 +159,15 @@ abstract class ApiAbstract extends Object
                 $temp = $node->attr($attr);
             }
         } catch (\Exception $e) {
+        }
+        if($trim == 'timestamp'){
+            $temp = preg_replace('/.*ldst_strftime\(/','',$temp);
+            $temp = preg_replace('/,.*/',"",$temp);
+            $temp = trim($temp);
+        }
+        if($trim == 'hash'){
+            preg_match('/([0-9a-zA-Z]+)$/',$temp,$m);
+            $temp = trim($m[0]);
         }
         return Utils::trimQsa($temp);
     }

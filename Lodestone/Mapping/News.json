@@ -1,0 +1,37 @@
+{
+    "id": {
+        "selector": "//*[@id='main']/div/div/div[3]/div/div/dl/dd/div/a",
+        "filter": "filterXPath",
+        "attr": "href",
+        "subset":"1",
+        "trim": "hash"
+    },
+    "timestamp": {
+        "selector": "//*[@id='main']/div/div/div[3]/div/div/dl/dt/script/text()",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"1",
+        "trim": "timestamp"
+    },
+    "href": {
+        "selector": "//*[@id='main']/div/div/div[3]/div/div/dl/dd/div/a",
+        "filter": "filterXPath",
+        "attr": "href",
+        "subset":"1",
+        "trim": ""
+    },
+    "title": {
+        "selector": "//*[@id='main']/div/div/div[3]/div/div/dl/dd/div/a",
+        "filter": "filterXPath",
+        "attr": "",
+        "subset":"1",
+        "trim": ""
+    },
+    "tag": {
+        "selector": "//*[@id='main']/div/div/div[3]/div/div/div[1]/dl/dd/div/span",
+        "filter": "filterXPath",
+        "attr": "text",
+        "subset":"1",
+        "trim": ""
+    }
+}
